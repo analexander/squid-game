@@ -12,6 +12,12 @@ document.body.appendChild( renderer.domElement );
 
 camera.position.z = 5;
 
+// Instantiate a loader
+const loader = new THREE.GLTFLoader();
+loader.load("../models/scene.gltf", function(gltf) {
+	scene.add(gltf.scene)
+});
+
 function animate() {
 	requestAnimationFrame( animate );
 	renderer.render( scene, camera );
